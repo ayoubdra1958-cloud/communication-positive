@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La communication positive</title>
+<style>
+* { box-sizing: border-box; }
+body {
+ margin: 0;
+ background: #101b35;
+ color: white;
+ font-family: Arial, sans-serif;
+}
+.slide {
+ display: none;
+ min-height: 85vh;
+ padding: 50px 10%;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+}
+.slide.active { display: flex; }
+h1 { color: #55dfc1; font-size: 38px; }
+p, li { font-size: 21px; line-height: 1.8; }
+ul, ol { text-align: left; max-width: 850px; }
+.controls { text-align: center; padding: 20px; }
+button {
+ background: #55dfc1;
+ color: #101b35;
+ border: 0;
+ border-radius: 8px;
+ padding: 12px 25px;
+ margin: 5px;
+ cursor: pointer;
+ font-size: 17px;
+}
+#counter { color: #55dfc1; }
+</style>
+</head>
+<body>
+
+<section class="slide active">
+<h1>La communication positive</h1>
+<p>Mieux communiquer pour mieux vivre ensemble.</p>
+<p>L’écoute, le respect et l’empathie au quotidien.</p>
+</section>
+
+<section class="slide">
+<h1>Qu’est-ce que la communication positive ?</h1>
+<p>Une manière de communiquer avec respect,
+bienveillance et constructivité.</p>
+<ul>
+<li>Exprimer ses idées clairement et calmement.</li>
+<li>Écouter sans juger.</li>
+<li>Respecter les opinions et les émotions.</li>
+<li>Chercher des solutions plutôt que des conflits.</li>
+</ul>
+</section>
+
+<section class="slide">
+<h1>Les six piliers de la communication positive</h1>
+<ol>
+<li>L’écoute active.</li>
+<li>L’empathie.</li>
+<li>Le respect.</li>
+<li>L’assertivité.</li>
+<li>La bienveillance.</li>
+<li>L’ouverture d’esprit.</li>
+</ol>
+</section>
+
+<section class="slide">
+<h1>Les outils pratiques</h1>
+<ul>
+<li>Les questions ouvertes.</li>
+<li>La reformulation.</li>
+<li>Le langage positif.</li>
+<li>Les messages en « je ».</li>
+<li>Le feedback constructif.</li>
+<li>Le langage corporel.</li>
+</ul>
+</section>
+
+<section class="slide">
+<h1>La méthode au quotidien</h1>
+<ol>
+<li>Prendre une pause.</li>
+<li>Décrire les faits.</li>
+<li>Exprimer ses émotions et ses besoins.</li>
+<li>Proposer une solution.</li>
+</ol>
+</section>
+
+<section class="slide">
+<h1>Les bénéfices dans les relations personnelles</h1>
+<ul>
+<li>Renforcer les relations familiales et amicales.</li>
+<li>Développer la confiance.</li>
+<li>Réduire les malentendus et les disputes.</li>
+<li>Mieux exprimer ses émotions.</li>
+<li>Favoriser l’harmonie.</li>
+</ul>
+</section>
+
+<section class="slide">
+<h1>Les bénéfices dans les relations professionnelles</h1>
+<ul>
+<li>Améliorer le travail en équipe.</li>
+<li>Renforcer la coopération.</li>
+<li>Prévenir et résoudre les conflits.</li>
+<li>Créer un climat agréable.</li>
+<li>Développer la motivation et la confiance.</li>
+<li>Faciliter la prise de décision.</li>
+</ul>
+</section>
+
+<section class="slide">
+<h1>Comment transformer notre communication ?</h1>
+<ul>
+<li>Pratiquer l’écoute active.</li>
+<li>Éviter les jugements.</li>
+<li>Réfléchir avant de parler.</li>
+<li>Utiliser des mots positifs.</li>
+<li>Accepter les différences.</li>
+<li>Accepter les remarques constructives.</li>
+<li>Faire preuve de patience.</li>
+</ul>
+</section>
+
+<section class="slide">
+<h1>Conclusion</h1>
+<p>La communication positive construit des
+relations saines, harmonieuses et durables.</p>
+<p>« Bien communiquer, c’est créer des liens,
+construire la confiance et mieux vivre ensemble. »</p>
+<h1>Merci pour votre attention !</h1>
+</section>
+
+<div class="controls">
+<button onclick="move(-1)">Précédent</button>
+<span id="counter">1 / 9</span>
+<button onclick="move(1)">Suivant</button>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+
+function move(direction) {
+ slides[current].classList.remove('active');
+ current = (current + direction + slides.length) % slides.length;
+ slides[current].classList.add('active');
+ document.getElementById('counter').textContent =
+ (current + 1) + ' / ' + slides.length;
+}
+
+document.addEventListener('keydown', function(e) {
+ if(e.key === 'ArrowRight') move(1);
+ if(e.key === 'ArrowLeft') move(-1);
+});
+</script>
+
+</body>
+</html>
